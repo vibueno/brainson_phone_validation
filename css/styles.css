@@ -1,3 +1,82 @@
-input:invalid {
+:root {
+  --color-txt: #6300a0;
+  --color-txt-invalid: #fff;
+  --color-danger: #b20a37;
+  --color-white: #fff;
+}
+
+@keyframes headshake {
+  25% {
+    transform: translateX(1%);
+  }
+  75% {
+    transform: translateX(-1%);
+  }
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-field {
+  margin: 10px;
+  border: 1px solid var(--color-txt);
+  padding: 0.5rem 1.5rem;
+  width: 250px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: var(--color-txt);
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid var(--color-txt);
+}
+
+.input-field:invalid {
   background-color: #ffdddd;
+}
+
+.input-field:not(:focus):invalid {
+  animation: headshake 100ms cubic-bezier(0.4, 0.1, 0.6, 0.9) 3;
+  border: 2px var(--color-danger);
+  background: var(--color-danger);
+  color: var(--color-txt-invalid);
+}
+
+label {
+  display: block;
+  padding: 0.5rem 1.5rem;
+  font-size: 20px;
+  color: var(--color-txt);
+}
+
+#phone-number {
+  border-radius: 100rem;
+  height: 20px;
+}
+
+#remarks {
+  border-radius: 10px;
+  height: 100px;
+}
+
+#submit {
+  box-shadow: 0 3px #999;
+  border: none;
+  border-radius: 100rem;
+  padding: 0.5rem 1.5rem;
+  width: 150px;
+  background-color: var(--color-txt);
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: #fff;
+}
+
+#submit:active {
+  box-shadow: 0 0px;
+  transform: translateY(4px);
 }
